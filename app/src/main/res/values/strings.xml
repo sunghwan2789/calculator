@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">방성환의 계산기</string>
+    <string name="expression_hint">계산식을 입력하세요</string>
+</resources>
