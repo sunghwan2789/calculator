@@ -90,12 +90,12 @@
             android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:text="+/−"
-            android:id="@+id/signToggleButton"/>
+            android:id="@+id/signOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:text="()"
-            android:id="@+id/parenthesisButton"/>
+            android:id="@+id/parenthesisOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
@@ -110,8 +110,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="9"
-            android:id="@+id/nineButton"/>
+            android:text="7"
+            android:id="@+id/sevenButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
@@ -120,20 +120,19 @@
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="7"
-            android:id="@+id/sevenButton"/>
+            android:text="9"
+            android:id="@+id/nineButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:text="×"
             android:id="@+id/multiplyOperatorButton"/>
 
-
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="6"
-            android:id="@+id/sixButton"/>
+            android:text="4"
+            android:id="@+id/fourButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
@@ -142,8 +141,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="4"
-            android:id="@+id/fourButton"/>
+            android:text="6"
+            android:id="@+id/sixButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
@@ -153,8 +152,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="3"
-            android:id="@+id/threeButton"/>
+            android:text="1"
+            android:id="@+id/oneButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
@@ -163,8 +162,8 @@
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="1"
-            android:id="@+id/oneButton"/>
+            android:text="3"
+            android:id="@+id/threeButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
