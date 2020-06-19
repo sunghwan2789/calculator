@@ -18,7 +18,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:hint="@string/expression_hint"
-            android:inputType="none"
             android:gravity="right|bottom"
             android:id="@+id/expressionEditText"/>
 
