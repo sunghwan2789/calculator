@@ -43,25 +43,29 @@
         android:columnCount="4"
         android:rowCount="7">
 
-        <Button
+        <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="📝"
+            android:src="@drawable/ic_history_24dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/historyButton"/>
-        <Button
+        <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="IMPORT"
+            android:src="@drawable/ic_file_download_24dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/importButton"/>
-        <Button
+        <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="EXPORT"
+            android:src="@drawable/ic_file_upload_24dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/exportButton"/>
-        <Button
+        <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
-            android:text="DEL"
+            android:src="@drawable/ic_backspace_24dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/deleteButton"/>
 
         <Button
