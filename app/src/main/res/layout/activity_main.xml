@@ -9,61 +9,62 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="200dp"
         android:orientation="vertical">
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:hint="@string/expression_hint"
             android:gravity="right|bottom"
-            android:id="@+id/expressionEditText"/>
+            android:autoSizeTextType="uniform"
+            android:id="@+id/expressionTextView"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="right|top"
+            android:autoSizeTextType="uniform"
             android:id="@+id/resultTextView"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
     </LinearLayout>
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:rowCount="7">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4">
 
         <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:src="@drawable/ic_history_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/historyButton"/>
         <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:src="@drawable/ic_file_download_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/importButton"/>
         <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:src="@drawable/ic_file_upload_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/exportButton"/>
         <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:src="@drawable/ic_backspace_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/deleteButton"/>
@@ -71,105 +72,145 @@
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="AND"
             android:id="@+id/andOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="OR"
             android:id="@+id/orOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="NOT"
             android:id="@+id/notOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="XOR"
             android:id="@+id/xorOperatorButton"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="+/−"
             android:id="@+id/signOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="()"
             android:id="@+id/parenthesisOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="%"
             android:id="@+id/remainOperatorButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="÷"
             android:id="@+id/divideOperatorButton"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="7"
             android:id="@+id/sevenButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="8"
             android:id="@+id/eightButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="9"
             android:id="@+id/nineButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="×"
             android:id="@+id/multiplyOperatorButton"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="4"
             android:id="@+id/fourButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="5"
             android:id="@+id/fiveButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="6"
             android:id="@+id/sixButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="−"
             android:id="@+id/subtractOperatorButton"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="1"
             android:id="@+id/oneButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="2"
             android:id="@+id/twoButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="3"
             android:id="@+id/threeButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="+"
             android:id="@+id/addOperatorButton"/>
 
@@ -177,16 +218,22 @@
             android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_columnSpan="2"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="0"
             android:id="@+id/zeroButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="."
             android:id="@+id/dotButton"/>
         <Button
             android:layout_width="0dp"
             android:layout_columnWeight="1"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
             android:text="="
             android:id="@+id/equalOperatorButton"/>
 
