@@ -191,7 +191,8 @@ public class CalculatorManager {
     }
 
     public BigDecimal execute() {
-        return null;
+        Calculator calculator = new Calculator(expressionCommands);
+        return calculator.execute();
     }
 
     public void remove() {
