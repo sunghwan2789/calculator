@@ -37,16 +37,18 @@ public class BitwiseCommand extends ExpressionCommand {
     @Override
     public int compareTo(ExpressionCommand o) {
         if (o instanceof BitwiseCommand) {
-            Command compareType = o.getType();
             switch (getType()) {
                 case NOT:
-                    if (compareType == Command.NOT) {
-                        return -1;
-                    } else {
-                        return 1;
+                    switch (o.getType()) {
+                        case NOT:
+                            return -1;
+                        case AND:
+                        case XOR:
+                        case OR:
+                            return 1;
                     }
                 case AND:
-                    switch (compareType) {
+                    switch (o.getType()) {
                         case NOT:
                             return -1;
                         case AND:
@@ -55,7 +57,7 @@ public class BitwiseCommand extends ExpressionCommand {
                             return 1;
                     }
                 case XOR:
-                    switch (compareType) {
+                    switch (o.getType()) {
                         case NOT:
                         case AND:
                             return -1;
@@ -64,7 +66,7 @@ public class BitwiseCommand extends ExpressionCommand {
                             return 1;
                     }
                 case OR:
-                    switch (compareType) {
+                    switch (o.getType()) {
                         case NOT:
                         case AND:
                         case XOR:

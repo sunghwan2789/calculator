@@ -32,11 +32,10 @@ public class BinaryCommand extends ExpressionCommand {
     @Override
     public int compareTo(ExpressionCommand o) {
         if (o instanceof BinaryCommand) {
-            Command compareType = o.getType();
             switch (getType()) {
                 case ADD:
                 case SUBTRACT:
-                    switch (compareType) {
+                    switch (o.getType()) {
                         case MULTIPLY:
                         case DIVIDE:
                         case MODULAR:
