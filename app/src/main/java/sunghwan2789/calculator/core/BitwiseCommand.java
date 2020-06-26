@@ -3,10 +3,10 @@ package sunghwan2789.calculator.core;
 import java.math.BigDecimal;
 import java.util.Stack;
 
-public class ParenthesisCommand implements ExpressionCommand {
+public class BitwiseCommand implements ExpressionCommand {
     private Command type;
 
-    public ParenthesisCommand(Command type) {
+    public BitwiseCommand(Command type) {
         this.type = type;
     }
 
