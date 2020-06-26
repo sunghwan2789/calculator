@@ -1,6 +1,7 @@
 package sunghwan2789.calculator.core;
 
 public enum Command {
+    NULL,
     NUMBER_0,
     NUMBER_1,
     NUMBER_2,
