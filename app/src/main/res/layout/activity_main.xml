@@ -117,13 +117,13 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:text="("
-                android:id="@+id/openParenthesisButton"/>
+                android:id="@+id/openParenthesesButton"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:text=")"
-                android:id="@+id/closeParenthesisButton"/>
+                android:id="@+id/closeParenthesesButton"/>
         </LinearLayout>
         <Button
             android:layout_width="0dp"

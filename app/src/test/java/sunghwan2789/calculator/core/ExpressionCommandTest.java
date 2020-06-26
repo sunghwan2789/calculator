@@ -14,6 +14,6 @@ public class ExpressionCommandTest {
         assertTrue("ADD has lower precedence than MULTIPLY", a.compareTo(b) < 0);
         assertTrue("MULTIPLY has higher precedence than ADD", b.compareTo(a) > 0);
 
-        a = new ParenthesisCommand(Command.OPEN_PARENTHESIS);
+        a = new ParenthesesCommand(Command.OPEN_PARENTHESES);
     }
 }

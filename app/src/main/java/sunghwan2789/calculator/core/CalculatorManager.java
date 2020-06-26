@@ -19,8 +19,8 @@ public class CalculatorManager {
     public void add(Command command) {
         if (isOperand(command)) {
             addOperand(command);
-        } else if (isParenthesis(command)) {
-            addParenthesis(command);
+        } else if (isParentheses(command)) {
+            addParentheses(command);
         } else if (isUnary(command)) {
             addUnary(command);
         } else if (isBinary(command)) {
@@ -107,24 +107,24 @@ public class CalculatorManager {
         return operand;
     }
 
-    private static boolean isParenthesis(Command command) {
+    private static boolean isParentheses(Command command) {
         switch (command) {
-            case OPEN_PARENTHESIS:
-            case CLOSE_PARENTHESIS:
+            case OPEN_PARENTHESES:
+            case CLOSE_PARENTHESES:
                 return true;
             default:
                 return false;
         }
     }
 
-    private void addParenthesis(Command command) {
+    private void addParentheses(Command command) {
         switch (command) {
-            case OPEN_PARENTHESIS:
+            case OPEN_PARENTHESES:
                 if (expressionCommands.peekLast() instanceof OperandCommand) {
                     expressionCommands.add(new BinaryCommand(Command.MULTIPLY));
                 }
-            case CLOSE_PARENTHESIS:
-                expressionCommands.add(new ParenthesisCommand(command));
+            case CLOSE_PARENTHESES:
+                expressionCommands.add(new ParenthesesCommand(command));
                 break;
         }
     }

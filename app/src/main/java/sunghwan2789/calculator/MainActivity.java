@@ -2,7 +2,6 @@ package sunghwan2789.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -37,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.notButton).setOnClickListener(this);
         findViewById(R.id.xorButton).setOnClickListener(this);
         findViewById(R.id.toggleSignButton).setOnClickListener(this);
-        findViewById(R.id.openParenthesisButton).setOnClickListener(this);
-        findViewById(R.id.closeParenthesisButton).setOnClickListener(this);
+        findViewById(R.id.openParenthesesButton).setOnClickListener(this);
+        findViewById(R.id.closeParenthesesButton).setOnClickListener(this);
         findViewById(R.id.modularButton).setOnClickListener(this);
         findViewById(R.id.divideButton).setOnClickListener(this);
         findViewById(R.id.number7Button).setOnClickListener(this);
@@ -97,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculatorManager.add(Command.TOGGLE_SIGN);
                 return true;
             case '(':
-                calculatorManager.add(Command.OPEN_PARENTHESIS);
+                calculatorManager.add(Command.OPEN_PARENTHESES);
                 return true;
             case ')':
-                calculatorManager.add(Command.CLOSE_PARENTHESIS);
+                calculatorManager.add(Command.CLOSE_PARENTHESES);
                 return true;
             case '+':
                 calculatorManager.add(Command.ADD);
@@ -192,11 +191,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.toggleSignButton:
                 calculatorManager.add(Command.TOGGLE_SIGN);
                 return true;
-            case R.id.openParenthesisButton:
-                calculatorManager.add(Command.OPEN_PARENTHESIS);
+            case R.id.openParenthesesButton:
+                calculatorManager.add(Command.OPEN_PARENTHESES);
                 return true;
-            case R.id.closeParenthesisButton:
-                calculatorManager.add(Command.CLOSE_PARENTHESIS);
+            case R.id.closeParenthesesButton:
+                calculatorManager.add(Command.CLOSE_PARENTHESES);
                 return true;
             case R.id.addButton:
                 calculatorManager.add(Command.ADD);

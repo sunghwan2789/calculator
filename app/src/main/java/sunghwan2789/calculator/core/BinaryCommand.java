@@ -49,7 +49,7 @@ public class BinaryCommand extends ExpressionCommand {
                 case MODULAR:
                     return 1;
             }
-        } else if (o instanceof ParenthesisCommand) {
+        } else if (o instanceof ParenthesesCommand) {
             return -1;
         } else if (o instanceof UnaryCommand) {
             return -1;

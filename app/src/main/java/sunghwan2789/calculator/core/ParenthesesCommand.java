@@ -5,8 +5,8 @@ import androidx.annotation.NonNull;
 import java.math.BigDecimal;
 import java.util.Stack;
 
-public class ParenthesisCommand extends ExpressionCommand {
-    public ParenthesisCommand(Command type) {
+public class ParenthesesCommand extends ExpressionCommand {
+    public ParenthesesCommand(Command type) {
         super(type);
     }
 
@@ -18,9 +18,9 @@ public class ParenthesisCommand extends ExpressionCommand {
     @Override
     public int compareTo(ExpressionCommand o) {
         switch (getType()) {
-            case OPEN_PARENTHESIS:
+            case OPEN_PARENTHESES:
                 return -1;
-            case CLOSE_PARENTHESIS:
+            case CLOSE_PARENTHESES:
                 return 1;
         }
 
@@ -31,9 +31,9 @@ public class ParenthesisCommand extends ExpressionCommand {
     @Override
     public String toString() {
         switch (getType()) {
-            case OPEN_PARENTHESIS:
+            case OPEN_PARENTHESES:
                 return "(";
-            case CLOSE_PARENTHESIS:
+            case CLOSE_PARENTHESES:
                 return ")";
         }
 

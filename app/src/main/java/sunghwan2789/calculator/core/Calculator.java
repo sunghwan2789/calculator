@@ -26,14 +26,14 @@ public class Calculator {
             }
 
             // 괄호 처리
-            if (commandQueue.peek() instanceof ParenthesisCommand) {
+            if (commandQueue.peek() instanceof ParenthesesCommand) {
                 switch (commandQueue.peek().getType()) {
-                    case OPEN_PARENTHESIS:
+                    case OPEN_PARENTHESES:
                         operatorStack.push(commandQueue.remove());
                         continue;
-                    case CLOSE_PARENTHESIS:
+                    case CLOSE_PARENTHESES:
                         // 괄호 짝을 찾을 때까지 계산
-                        while (operatorStack.peek().getType() != Command.OPEN_PARENTHESIS) {
+                        while (operatorStack.peek().getType() != Command.OPEN_PARENTHESES) {
                             operandStack.push(operatorStack.pop().execute(operandStack));
                         }
                         // 여는 괄호 제거

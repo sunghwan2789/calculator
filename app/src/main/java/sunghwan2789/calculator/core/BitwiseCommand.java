@@ -77,7 +77,7 @@ public class BitwiseCommand extends ExpressionCommand {
                             return 1;
                     }
             }
-        } else if (o instanceof ParenthesisCommand) {
+        } else if (o instanceof ParenthesesCommand) {
             return -1;
         } else if (o instanceof UnaryCommand) {
             return -1;

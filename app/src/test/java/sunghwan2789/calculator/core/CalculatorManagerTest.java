@@ -1,14 +1,10 @@
 package sunghwan2789.calculator.core;
 
-import android.icu.text.Normalizer2;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -105,11 +101,11 @@ public class CalculatorManagerTest {
         calculator.add(Command.SUBTRACT);
         calculator.add(Command.NUMBER_4);
         calculator.add(Command.MULTIPLY);
-        calculator.add(Command.OPEN_PARENTHESIS);
+        calculator.add(Command.OPEN_PARENTHESES);
         calculator.add(Command.NUMBER_5);
         calculator.add(Command.ADD);
         calculator.add(Command.NUMBER_6);
-        calculator.add(Command.CLOSE_PARENTHESIS);
+        calculator.add(Command.CLOSE_PARENTHESES);
         calculator.add(Command.DIVIDE);
         calculator.add(Command.NUMBER_7);
         assertEquals("0.714285714285714", calculator.execute().toPlainString());
