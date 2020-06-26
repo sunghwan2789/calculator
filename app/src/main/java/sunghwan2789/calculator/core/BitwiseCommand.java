@@ -18,16 +18,16 @@ public class BitwiseCommand extends ExpressionCommand {
                 a = operandStack.pop().toBigIntegerExact();
                 return new BigDecimal(a.not());
             case AND:
-                a = operandStack.pop().toBigIntegerExact();
                 b = operandStack.pop().toBigIntegerExact();
+                a = operandStack.pop().toBigIntegerExact();
                 return new BigDecimal(a.and(b));
             case XOR:
-                a = operandStack.pop().toBigIntegerExact();
                 b = operandStack.pop().toBigIntegerExact();
+                a = operandStack.pop().toBigIntegerExact();
                 return new BigDecimal(a.xor(b));
             case OR:
-                a = operandStack.pop().toBigIntegerExact();
                 b = operandStack.pop().toBigIntegerExact();
+                a = operandStack.pop().toBigIntegerExact();
                 return new BigDecimal(a.or(b));
         }
 

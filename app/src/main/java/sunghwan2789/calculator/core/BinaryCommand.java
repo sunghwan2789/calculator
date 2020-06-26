@@ -10,8 +10,8 @@ public class BinaryCommand extends ExpressionCommand {
 
     @Override
     public BigDecimal execute(Stack<BigDecimal> operandStack) {
-        BigDecimal a = operandStack.pop();
         BigDecimal b = operandStack.pop();
+        BigDecimal a = operandStack.pop();
 
         switch (getType()) {
             case ADD:
