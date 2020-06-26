@@ -2,6 +2,8 @@ package sunghwan2789.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -25,6 +27,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         expressionTextView = findViewById(R.id.expressionTextView);
         resultTextView = findViewById(R.id.resultTextView);
+
+        findViewById(R.id.historyButton);
+        findViewById(R.id.importButton);
+        findViewById(R.id.exportButton);
+        findViewById(R.id.removeButton).setOnClickListener(this);
+        findViewById(R.id.andButton).setOnClickListener(this);
+        findViewById(R.id.orButton).setOnClickListener(this);
+        findViewById(R.id.notButton).setOnClickListener(this);
+        findViewById(R.id.xorButton).setOnClickListener(this);
+        findViewById(R.id.toggleSignButton).setOnClickListener(this);
+        findViewById(R.id.openParenthesisButton).setOnClickListener(this);
+        findViewById(R.id.closeParenthesisButton).setOnClickListener(this);
+        findViewById(R.id.modularButton).setOnClickListener(this);
+        findViewById(R.id.divideButton).setOnClickListener(this);
+        findViewById(R.id.number7Button).setOnClickListener(this);
+        findViewById(R.id.number8Button).setOnClickListener(this);
+        findViewById(R.id.number9Button).setOnClickListener(this);
+        findViewById(R.id.multiplyButton).setOnClickListener(this);
+        findViewById(R.id.number4Button).setOnClickListener(this);
+        findViewById(R.id.number5Button).setOnClickListener(this);
+        findViewById(R.id.number6Button).setOnClickListener(this);
+        findViewById(R.id.subtractButton).setOnClickListener(this);
+        findViewById(R.id.number1Button).setOnClickListener(this);
+        findViewById(R.id.number2Button).setOnClickListener(this);
+        findViewById(R.id.number3Button).setOnClickListener(this);
+        findViewById(R.id.addButton).setOnClickListener(this);
+        findViewById(R.id.number0Button).setOnClickListener(this);
+        findViewById(R.id.decimalPointButton).setOnClickListener(this);
+        findViewById(R.id.equalButton).setOnClickListener(this);
     }
 
     public boolean handleCharacterCommand(char character) {
@@ -110,11 +141,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         // 문자로 입력 가능한 키 처리
         if (handleCharacterCommand((char)event.getUnicodeChar())) {
+            previewCalculation();
             return true;
         }
         // 백스페이스 키 처리
         if (keyCode == KeyEvent.KEYCODE_DEL) {
             calculatorManager.add(Command.REMOVE);
+            previewCalculation();
             return true;
         }
         // 그 외 기본치 처리
@@ -205,7 +238,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (handleButtonCommand(v.getId())) {
+            previewCalculation();
             return;
+        }
+    }
+
+    public void previewCalculation() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            resultTextView.setTransitionAlpha(0.6f);
+        }
+        try {
+            resultTextView.setText(calculatorManager.execute().toPlainString());
+        } catch (Exception ex) {
+            resultTextView.setText("오류");
+        }
+    }
+
+    public void showCalculation() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            resultTextView.setTransitionAlpha(1f);
+        }
+        try {
+            resultTextView.setText(calculatorManager.execute().toPlainString());
+        } catch (Exception ex) {
+            resultTextView.setText("오류");
         }
     }
 }
