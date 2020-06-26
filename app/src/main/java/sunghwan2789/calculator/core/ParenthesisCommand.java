@@ -15,6 +15,13 @@ public class ParenthesisCommand extends ExpressionCommand {
 
     @Override
     public int compareTo(ExpressionCommand o) {
+        switch (getType()) {
+            case OPEN_PARENTHESIS:
+                return -1;
+            case CLOSE_PARENTHESIS:
+                return 1;
+        }
+
         throw new UnsupportedOperationException();
     }
 }

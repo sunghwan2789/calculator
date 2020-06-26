@@ -27,16 +27,19 @@ public class Calculator {
 
             // 괄호 처리
             if (commandQueue.peek() instanceof ParenthesisCommand) {
-                switch (commandQueue.remove().getType()) {
+                switch (commandQueue.peek().getType()) {
                     case OPEN_PARENTHESIS:
                         operatorStack.push(commandQueue.remove());
-                        break;
+                        continue;
                     case CLOSE_PARENTHESIS:
+                        // 괄호 짝을 찾을 때까지 계산
                         while (operatorStack.peek().getType() != Command.OPEN_PARENTHESIS) {
                             operandStack.push(operatorStack.pop().execute(operandStack));
                         }
+                        // 여는 괄호 제거
                         operatorStack.pop();
-                        break;
+                        commandQueue.remove();
+                        continue;
                     default:
                         throw new UnsupportedOperationException();
                 }
