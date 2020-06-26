@@ -1,6 +1,7 @@
 package sunghwan2789.calculator.core;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Stack;
 
 public class BinaryCommand extends ExpressionCommand {
@@ -21,7 +22,7 @@ public class BinaryCommand extends ExpressionCommand {
             case MULTIPLY:
                 return a.multiply(b);
             case DIVIDE:
-                return a.divide(b);
+                return a.divide(b, MathContext.DECIMAL64);
             case MODULAR:
                 return a.remainder(b);
             default:

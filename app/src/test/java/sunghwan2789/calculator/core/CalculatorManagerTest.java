@@ -112,6 +112,6 @@ public class CalculatorManagerTest {
         calculator.add(Command.CLOSE_PARENTHESIS);
         calculator.add(Command.DIVIDE);
         calculator.add(Command.NUMBER_7);
-        assertEquals("0.714285", calculator.execute().toPlainString());
+        assertEquals("0.714285714285714", calculator.execute().toPlainString());
     }
 }
