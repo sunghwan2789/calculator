@@ -12,7 +12,7 @@ public class OperandCommand implements ExpressionCommand {
 
     @Override
     public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
-        return null;
+        return numberInput.toBigDecimal();
     }
 
     @Override
