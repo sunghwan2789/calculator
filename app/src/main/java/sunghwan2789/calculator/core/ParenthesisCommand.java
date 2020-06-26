@@ -3,20 +3,18 @@ package sunghwan2789.calculator.core;
 import java.math.BigDecimal;
 import java.util.Stack;
 
-public class ParenthesisCommand implements ExpressionCommand {
-    private Command type;
-
+public class ParenthesisCommand extends ExpressionCommand {
     public ParenthesisCommand(Command type) {
-        this.type = type;
+        super(type);
     }
 
     @Override
     public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public int compareTo(ExpressionCommand o) {
-        return 0;
+        throw new UnsupportedOperationException();
     }
 }

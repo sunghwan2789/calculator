@@ -4,18 +4,16 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Stack;
 
-public class BitwiseCommand implements ExpressionCommand {
-    private Command type;
-
+public class BitwiseCommand extends ExpressionCommand {
     public BitwiseCommand(Command type) {
-        this.type = type;
+        super(type);
     }
 
     @Override
     public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
         BigInteger a, b;
 
-        switch (type) {
+        switch (getType()) {
             case NOT:
                 a = operandStack.pop().toBigIntegerExact();
                 return new BigDecimal(a.not());
@@ -33,14 +31,14 @@ public class BitwiseCommand implements ExpressionCommand {
                 return new BigDecimal(a.or(b));
         }
 
-        throw new UnsupportedOperationException(type.toString());
+        throw new UnsupportedOperationException(getType().toString());
     }
 
     @Override
     public int compareTo(ExpressionCommand o) {
         if (o instanceof BitwiseCommand) {
-            Command compareType = ((BitwiseCommand) o).type;
-            switch (type) {
+            Command compareType = o.getType();
+            switch (getType()) {
                 case NOT:
                     if (compareType == Command.NOT) {
                         return -1;

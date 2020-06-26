@@ -26,6 +26,7 @@ public class Calculator {
 
             operatorStack.push(commandQueue.remove());
         }
+
         return BigDecimal.ZERO;
     }
 }

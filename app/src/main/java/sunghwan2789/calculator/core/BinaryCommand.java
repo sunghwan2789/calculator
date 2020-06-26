@@ -3,11 +3,9 @@ package sunghwan2789.calculator.core;
 import java.math.BigDecimal;
 import java.util.Stack;
 
-public class BinaryCommand implements ExpressionCommand {
-    private Command type;
-
+public class BinaryCommand extends ExpressionCommand {
     public BinaryCommand(Command type) {
-        this.type = type;
+        super(type);
     }
 
     @Override
@@ -15,7 +13,7 @@ public class BinaryCommand implements ExpressionCommand {
         BigDecimal a = operandStack.pop();
         BigDecimal b = operandStack.pop();
 
-        switch (type) {
+        switch (getType()) {
             case ADD:
                 return a.add(b);
             case SUBTRACT:
@@ -27,15 +25,15 @@ public class BinaryCommand implements ExpressionCommand {
             case MODULAR:
                 return a.remainder(b);
             default:
-                throw new UnsupportedOperationException(type.toString());
+                throw new UnsupportedOperationException(getType().toString());
         }
     }
 
     @Override
     public int compareTo(ExpressionCommand o) {
         if (o instanceof BinaryCommand) {
-            Command compareType = ((BinaryCommand) o).type;
-            switch (type) {
+            Command compareType = o.getType();
+            switch (getType()) {
                 case ADD:
                 case SUBTRACT:
                     switch (compareType) {

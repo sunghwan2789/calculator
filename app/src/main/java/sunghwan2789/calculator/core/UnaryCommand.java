@@ -3,11 +3,9 @@ package sunghwan2789.calculator.core;
 import java.math.BigDecimal;
 import java.util.Stack;
 
-public class UnaryCommand implements ExpressionCommand {
-    private Command type;
-
+public class UnaryCommand extends ExpressionCommand {
     public UnaryCommand(Command type) {
-        this.type = type;
+        super(type);
     }
 
     @Override
