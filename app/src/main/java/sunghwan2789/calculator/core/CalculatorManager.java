@@ -134,9 +134,6 @@ public class CalculatorManager {
             case MULTIPLY:
             case DIVIDE:
             case MODULAR:
-            case AND:
-            case OR:
-            case XOR:
                 return true;
             default:
                 return false;
