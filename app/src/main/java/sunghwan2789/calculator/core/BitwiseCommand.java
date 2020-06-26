@@ -81,8 +81,8 @@ public class BitwiseCommand extends ExpressionCommand {
             return -1;
         } else if (o instanceof UnaryCommand) {
             return -1;
-        } else if (o instanceof BitwiseCommand) {
-            return 1;
+        } else if (o instanceof BinaryCommand) {
+            return -1;
         }
 
         throw new UnsupportedOperationException(o.toString());
