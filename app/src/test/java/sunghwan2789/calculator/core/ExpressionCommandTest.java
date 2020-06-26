@@ -13,7 +13,24 @@ public class ExpressionCommandTest {
         b = new BinaryCommand(Command.MULTIPLY);
         assertTrue("ADD has lower precedence than MULTIPLY", a.compareTo(b) < 0);
         assertTrue("MULTIPLY has higher precedence than ADD", b.compareTo(a) > 0);
+        b = new BitwiseCommand(Command.AND);
+        assertTrue("ADD is not higher than AND", a.compareTo(b) > 0);
+        assertTrue("AND is not lower than ADD", b.compareTo(a) < 0);
+        b = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
+        assertTrue("ADD is not lower than )", a.compareTo(b) < 0);
+        assertTrue(") is not higher than ADD", b.compareTo(a) > 0);
 
-        a = new ParenthesesCommand(Command.OPEN_PARENTHESES);
+        a = new BinaryCommand(Command.MULTIPLY);
+        b = new BitwiseCommand(Command.AND);
+        assertTrue("MULTIPLY is not higher than AND", a.compareTo(b) > 0);
+        assertTrue("AND is not lower than MULTIPLY", b.compareTo(a) < 0);
+        b = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
+        assertTrue("MULTIPLY is not lower than )", a.compareTo(b) < 0);
+        assertTrue(") is not higher than MULTIPLY", b.compareTo(a) > 0);
+
+        a = new BitwiseCommand(Command.AND);
+        b = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
+        assertTrue("AND is not lower than )", a.compareTo(b) < 0);
+        assertTrue(") is not higher than AND", b.compareTo(a) > 0);
     }
 }
