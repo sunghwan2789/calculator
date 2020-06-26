@@ -12,7 +12,23 @@ public class BinaryCommand implements ExpressionCommand {
 
     @Override
     public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
-        return null;
+        BigDecimal a = operandStack.pop();
+        BigDecimal b = operandStack.pop();
+
+        switch (type) {
+            case ADD:
+                return a.add(b);
+            case SUBTRACT:
+                return a.subtract(b);
+            case MULTIPLY:
+                return a.multiply(b);
+            case DIVIDE:
+                return a.divide(b);
+            case MODULAR:
+                return a.remainder(b);
+            default:
+                throw new UnsupportedOperationException(type.toString());
+        }
     }
 
     @Override
@@ -31,11 +47,16 @@ public class BinaryCommand implements ExpressionCommand {
                 case MULTIPLY:
                 case DIVIDE:
                 case MODULAR:
-                        return 1;
+                    return 1;
             }
-            return 0;
         } else if (o instanceof ParenthesisCommand) {
             return -1;
+        } else if (o instanceof UnaryCommand) {
+            return -1;
+        } else if (o instanceof BitwiseCommand) {
+            return 1;
         }
+
+        throw new UnsupportedOperationException();
     }
 }
