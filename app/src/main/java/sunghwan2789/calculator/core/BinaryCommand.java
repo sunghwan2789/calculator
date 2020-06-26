@@ -27,22 +27,15 @@ public class BinaryCommand implements ExpressionCommand {
                         case DIVIDE:
                         case MODULAR:
                             return -1;
-                        default:
-                            return 0;
                     }
                 case MULTIPLY:
                 case DIVIDE:
                 case MODULAR:
-                    switch (compareType) {
-                        case ADD:
-                        case SUBTRACT:
-                            return 1;
-                        default:
-                            return -1;
-                    }
+                        return 1;
             }
             return 0;
+        } else if (o instanceof ParenthesisCommand) {
+            return -1;
         }
-        return 0;
     }
 }
