@@ -10,7 +10,7 @@ public class BitwiseCommand extends ExpressionCommand {
     }
 
     @Override
-    public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
+    public BigDecimal execute(Stack<BigDecimal> operandStack) {
         BigInteger a, b;
 
         switch (getType()) {

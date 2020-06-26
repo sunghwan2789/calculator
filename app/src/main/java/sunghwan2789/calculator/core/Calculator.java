@@ -21,7 +21,7 @@ public class Calculator {
         while (!commandQueue.isEmpty()) {
             // 피연산자 처리
             if (commandQueue.peek() instanceof OperandCommand) {
-                operandStack.push(commandQueue.remove().execute(operandStack, operatorStack));
+                operandStack.push(commandQueue.remove().execute(operandStack));
                 continue;
             }
 
@@ -33,7 +33,7 @@ public class Calculator {
                         break;
                     case CLOSE_PARENTHESIS:
                         while (operatorStack.peek().getType() != Command.OPEN_PARENTHESIS) {
-                            operandStack.push(operatorStack.pop().execute(operandStack, operatorStack));
+                            operandStack.push(operatorStack.pop().execute(operandStack));
                         }
                         operatorStack.pop();
                         break;
@@ -44,14 +44,14 @@ public class Calculator {
 
             // 우선순위가 높은 연산자 먼저 처리
             while (!operatorStack.isEmpty() && operatorStack.peek().compareTo(commandQueue.peek()) > 0) {
-                operandStack.push(operatorStack.pop().execute(operandStack, operatorStack));
+                operandStack.push(operatorStack.pop().execute(operandStack));
             }
 
             operatorStack.push(commandQueue.remove());
         }
 
         while (!operatorStack.isEmpty()) {
-            operandStack.push(operatorStack.pop().execute(operandStack, operatorStack));
+            operandStack.push(operatorStack.pop().execute(operandStack));
         }
 
         if (operandStack.size() != 1) {

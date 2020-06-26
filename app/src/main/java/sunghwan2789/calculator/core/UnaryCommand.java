@@ -9,7 +9,7 @@ public class UnaryCommand extends ExpressionCommand {
     }
 
     @Override
-    public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
+    public BigDecimal execute(Stack<BigDecimal> operandStack) {
         return null;
     }
 

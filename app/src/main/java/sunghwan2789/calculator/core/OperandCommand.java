@@ -14,7 +14,7 @@ public class OperandCommand extends ExpressionCommand {
     }
 
     @Override
-    public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
+    public BigDecimal execute(Stack<BigDecimal> operandStack) {
         return numberInput.toBigDecimal();
     }
 

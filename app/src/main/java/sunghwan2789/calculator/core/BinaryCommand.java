@@ -9,7 +9,7 @@ public class BinaryCommand extends ExpressionCommand {
     }
 
     @Override
-    public BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack) {
+    public BigDecimal execute(Stack<BigDecimal> operandStack) {
         BigDecimal a = operandStack.pop();
         BigDecimal b = operandStack.pop();
 

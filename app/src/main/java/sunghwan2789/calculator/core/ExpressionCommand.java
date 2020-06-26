@@ -14,5 +14,5 @@ public abstract class ExpressionCommand implements Comparable<ExpressionCommand>
         return type;
     }
 
-    public abstract BigDecimal execute(Stack<BigDecimal> operandStack, Stack<ExpressionCommand> operatorStack);
+    public abstract BigDecimal execute(Stack<BigDecimal> operandStack);
 }
