@@ -1,5 +1,7 @@
 package sunghwan2789.calculator.core;
 
+import androidx.annotation.NonNull;
+
 import java.math.BigDecimal;
 import java.util.Stack;
 
@@ -23,5 +25,18 @@ public class ParenthesisCommand extends ExpressionCommand {
         }
 
         throw new UnsupportedOperationException();
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        switch (getType()) {
+            case OPEN_PARENTHESIS:
+                return "(";
+            case CLOSE_PARENTHESIS:
+                return ")";
+        }
+
+        throw new UnsupportedOperationException(getType().toString());
     }
 }

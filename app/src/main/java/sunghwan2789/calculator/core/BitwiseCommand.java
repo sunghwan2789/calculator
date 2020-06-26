@@ -1,5 +1,7 @@
 package sunghwan2789.calculator.core;
 
+import androidx.annotation.NonNull;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Stack;
@@ -84,5 +86,22 @@ public class BitwiseCommand extends ExpressionCommand {
         }
 
         throw new UnsupportedOperationException(o.toString());
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        switch (getType()) {
+            case AND:
+                return "&";
+            case OR:
+                return "|";
+            case NOT:
+                return "~";
+            case XOR:
+                return "^";
+        }
+
+        throw new UnsupportedOperationException(getType().toString());
     }
 }

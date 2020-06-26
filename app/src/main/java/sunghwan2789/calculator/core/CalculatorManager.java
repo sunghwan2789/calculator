@@ -1,5 +1,7 @@
 package sunghwan2789.calculator.core;
 
+import androidx.annotation.NonNull;
+
 import java.math.BigDecimal;
 import java.util.LinkedList;
 
@@ -202,5 +204,15 @@ public class CalculatorManager {
         } else {
             expressionCommands.removeLast();
         }
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (ExpressionCommand expression: expressionCommands) {
+            builder.append(expression.toString());
+        }
+        return builder.toString();
     }
 }

@@ -1,5 +1,7 @@
 package sunghwan2789.calculator.core;
 
+import androidx.annotation.NonNull;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Stack;
@@ -56,5 +58,24 @@ public class BinaryCommand extends ExpressionCommand {
         }
 
         throw new UnsupportedOperationException();
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        switch (getType()) {
+            case ADD:
+                return "+";
+            case SUBTRACT:
+                return "−";
+            case MULTIPLY:
+                return "×";
+            case DIVIDE:
+                return "÷";
+            case MODULAR:
+                return "%";
+        }
+
+        throw new UnsupportedOperationException(getType().toString());
     }
 }

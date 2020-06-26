@@ -244,6 +244,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void previewCalculation() {
+        expressionTextView.setText(calculatorManager.toString());
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             resultTextView.setTransitionAlpha(0.6f);
         }
