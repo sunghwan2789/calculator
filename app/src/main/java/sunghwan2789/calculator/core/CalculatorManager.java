@@ -148,12 +148,20 @@ public class CalculatorManager {
 
     private void addBinary(Command command) {
         switch (command) {
-            case ADD:
-            case SUBTRACT:
             case MULTIPLY:
             case DIVIDE:
             case MODULAR:
                 expressionCommands.add(new BinaryCommand(command));
+                break;
+            case ADD:
+            case SUBTRACT:
+                if (expressionCommands.isEmpty() || (!expressionCommands.isEmpty() && (
+                        !(expressionCommands.peekLast() instanceof OperandCommand)
+                        && (expressionCommands.peekLast().getType() != Command.CLOSE_PARENTHESES)))) {
+                    expressionCommands.add(new UnaryCommand(command));
+                } else {
+                    expressionCommands.add(new BinaryCommand(command));
+                }
                 break;
         }
     }

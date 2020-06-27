@@ -19,6 +19,10 @@ public class ExpressionCommandTest {
         b = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
         assertTrue("ADD is not lower than )", a.compareTo(b) < 0);
         assertTrue(") is not higher than ADD", b.compareTo(a) > 0);
+        b = new UnaryCommand(Command.SUBTRACT);
+        assertTrue("ADD is not lower than unary SUBTRACT", a.compareTo(b) < 0);
+        assertTrue("unary SUBTRACT is not higher than ADD", b.compareTo(a) > 0);
+
 
         a = new BinaryCommand(Command.MULTIPLY);
         b = new BitwiseCommand(Command.AND);
@@ -27,10 +31,26 @@ public class ExpressionCommandTest {
         b = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
         assertTrue("MULTIPLY is not lower than )", a.compareTo(b) < 0);
         assertTrue(") is not higher than MULTIPLY", b.compareTo(a) > 0);
+        b = new UnaryCommand(Command.SUBTRACT);
+        assertTrue("MULTIPLY is not lower than unary SUBTRACT", a.compareTo(b) < 0);
+        assertTrue("unary SUBTRACT is not higher than MULTIPLY", b.compareTo(a) > 0);
 
         a = new BitwiseCommand(Command.AND);
         b = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
         assertTrue("AND is not lower than )", a.compareTo(b) < 0);
         assertTrue(") is not higher than AND", b.compareTo(a) > 0);
+        b = new UnaryCommand(Command.SUBTRACT);
+        assertTrue("AND is not lower than unary SUBTRACT", a.compareTo(b) < 0);
+        assertTrue("unary SUBTRACT is not higher than AND", b.compareTo(a) > 0);
+
+        a = new ParenthesesCommand(Command.CLOSE_PARENTHESES);
+        b = new UnaryCommand(Command.SUBTRACT);
+        assertTrue(") is not higher than unary SUBTRACT", a.compareTo(b) > 0);
+        assertTrue("unary SUBTRACT is not lower than )", b.compareTo(a) < 0);
+
+        a = new BitwiseCommand(Command.NOT);
+        b = new UnaryCommand(Command.SUBTRACT);
+        assertTrue("NOT is not lower than unary SUBTRACT", a.compareTo(b) < 0);
+        assertTrue("unary SUBTRACT is not lower than NOT", b.compareTo(a) < 0);
     }
 }
