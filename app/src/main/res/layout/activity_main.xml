@@ -44,22 +44,50 @@
             android:src="@drawable/ic_history_24dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/historyButton"/>
-        <ImageButton
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:src="@drawable/ic_file_download_24dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:id="@+id/importButton"/>
-        <ImageButton
+            android:layout_rowWeight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_file_download_24dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/importButton"/>
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_play_arrow_24dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/importNextButton"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_columnWeight="1"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:src="@drawable/ic_file_upload_24dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:id="@+id/exportButton"/>
+            android:layout_rowWeight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_file_upload_24dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/exportButton"/>
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_stop_24dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/exportStopButton"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
         <ImageButton
             android:layout_width="0dp"
             android:layout_columnWeight="1"

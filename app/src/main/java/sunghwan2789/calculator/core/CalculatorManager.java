@@ -1,5 +1,9 @@
 package sunghwan2789.calculator.core;
 
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+
 import androidx.annotation.NonNull;
 
 import java.math.BigDecimal;
@@ -27,8 +31,12 @@ public class CalculatorManager {
             addBinary(command);
         } else if (isBitwise(command)) {
             addBitwise(command);
-        } if (command == Command.EQUAL) {
-            execute();
+        } else if (command == Command.EQUAL) {
+            BigDecimal result = execute();
+            if (handler != null) {
+                handler.onCalculatorExecute(result);
+            }
+            clear();
         } else if (command == Command.REMOVE) {
             remove();
         }
@@ -214,5 +222,19 @@ public class CalculatorManager {
             builder.append(expression.toString());
         }
         return builder.toString();
+    }
+
+    private CalculatorExecuteHandler handler;
+
+    public void setExecuteHandler(CalculatorExecuteHandler handler) {
+        this.handler = handler;
+    }
+
+    public interface CalculatorExecuteHandler {
+        void onCalculatorExecute(BigDecimal result);
+    }
+
+    public String serialize() {
+        return ExpressionSerializer.Serialize(expressionCommands);
     }
 }
