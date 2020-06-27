@@ -18,6 +18,10 @@ public class Calculator {
     }
 
     public BigDecimal execute() {
+        if (commandQueue.isEmpty()) {
+            return BigDecimal.ZERO;
+        }
+
         while (!commandQueue.isEmpty()) {
             // 피연산자 처리
             if (commandQueue.peek() instanceof OperandCommand) {

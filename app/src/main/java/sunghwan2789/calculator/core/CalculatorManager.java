@@ -213,7 +213,7 @@ public class CalculatorManager {
             if (operand.numberInput.isEmpty()) {
                 expressionCommands.removeLast();
             }
-        } else {
+        } else if (!expressionCommands.isEmpty()) {
             expressionCommands.removeLast();
         }
     }
