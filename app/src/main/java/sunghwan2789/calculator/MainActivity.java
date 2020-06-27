@@ -432,7 +432,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             resultTextView.setText(calculatorManager.execute().toPlainString());
         } catch (Exception ex) {
             ex.printStackTrace();
-            resultTextView.setText("오류");
+            resultTextView.setText("#ERROR");
         }
     }
 
@@ -449,12 +449,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             resultTextView.setTransitionAlpha(1f);
         }
-        try {
-            resultTextView.setText(result.toPlainString());
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            resultTextView.setText("오류");
+        resultTextView.setText(result.toPlainString());
+    }
+
+    @Override
+    public void onCalculatorError(Exception e) {
+        if (outputWriter != null) {
+            appendToOutput(calculatorManager.serialize() + " = #ERROR : " + e.getMessage());
         }
+
+        Log.i("EXECUTED", calculatorManager.toString());
+        e.printStackTrace();
+        expressionTextView.setText(calculatorManager.toString());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            resultTextView.setTransitionAlpha(1f);
+        }
+        resultTextView.setText("#ERROR");
     }
 
     private void appendToOutput(String expression) {

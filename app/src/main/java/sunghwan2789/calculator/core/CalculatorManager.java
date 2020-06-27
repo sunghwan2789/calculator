@@ -28,9 +28,16 @@ public class CalculatorManager {
         } else if (isBitwise(command)) {
             addBitwise(command);
         } else if (command == Command.EQUAL) {
-            BigDecimal result = execute();
-            if (handler != null) {
-                handler.onCalculatorExecute(result);
+            BigDecimal result;
+            try {
+                result = execute();
+                if (handler != null) {
+                    handler.onCalculatorExecute(result);
+                }
+            } catch (Exception e) {
+                if (handler != null) {
+                    handler.onCalculatorError(e);
+                }
             }
             clear();
         } else if (command == Command.REMOVE) {
@@ -236,6 +243,7 @@ public class CalculatorManager {
 
     public interface CalculatorExecuteHandler {
         void onCalculatorExecute(BigDecimal result);
+        void onCalculatorError(Exception e);
     }
 
     public String serialize() {
