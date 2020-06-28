@@ -1,14 +1,19 @@
 package sunghwan2789.calculator.core;
 
+/**
+ * 계산식을 재사용 가능한 형식으로 변환하는 클래스
+ */
 public class ExpressionSerializer {
-    public static String Serialize(Iterable<ExpressionCommand> expressionCommands) {
+    /** 계산식을 재사용 가능한 문자열로 변환한다. */
+    public static String serialize(Iterable<ExpressionCommand> expressionCommands) {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (ExpressionCommand command : expressionCommands) {
             if (command instanceof OperandCommand) {
-                OperandCommand operand = (OperandCommand) command;
-                stringBuilder.append(operand.toString());
+                // 피연산자는 그 자체로 재사용 가능한 문자열임
+                stringBuilder.append(command.toString());
             } else {
+                // 다른 문자는 변환해서 추가
                 stringBuilder.append(mapCommandToChar(command.getType()));
             }
         }

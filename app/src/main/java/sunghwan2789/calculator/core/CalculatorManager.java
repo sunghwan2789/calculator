@@ -247,6 +247,6 @@ public class CalculatorManager {
     }
 
     public String serialize() {
-        return ExpressionSerializer.Serialize(expressionCommands);
+        return ExpressionSerializer.serialize(expressionCommands);
     }
 }

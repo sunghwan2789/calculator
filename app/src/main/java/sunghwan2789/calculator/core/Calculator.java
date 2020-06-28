@@ -18,6 +18,7 @@ public class Calculator {
     }
 
     public BigDecimal execute() {
+        // 식이 없으면 0 반환
         if (commandQueue.isEmpty()) {
             return BigDecimal.ZERO;
         }
@@ -54,13 +55,16 @@ public class Calculator {
                 operandStack.push(operatorStack.pop().execute(operandStack));
             }
 
+            // 우선순위 처리를 위해 일단 스택에 등록
             operatorStack.push(commandQueue.remove());
         }
 
+        // 스택에 남아있는 연산자 처리
         while (!operatorStack.isEmpty()) {
             operandStack.push(operatorStack.pop().execute(operandStack));
         }
 
+        // 괄호 짝이 맞지 않거나 하는 등의 이유로 결과가 하나 이상이면 에러
         if (operandStack.size() != 1) {
             throw new UnsupportedOperationException();
         }
