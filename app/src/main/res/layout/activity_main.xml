@@ -133,6 +133,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="+/−"
+            android:textSize="24dp"
             android:id="@+id/toggleSignButton"/>
         <LinearLayout
             android:layout_width="0dp"
@@ -146,12 +147,14 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:text="("
+                android:textSize="24dp"
                 android:id="@+id/openParenthesesButton"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:text=")"
+                android:textSize="24dp"
                 android:id="@+id/closeParenthesesButton"/>
         </LinearLayout>
         <Button
@@ -167,6 +170,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="÷"
+            android:textSize="24dp"
             android:id="@+id/divideButton"/>
 
         <Button
@@ -175,6 +179,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="7"
+            android:textSize="24dp"
             android:id="@+id/number7Button"/>
         <Button
             android:layout_width="0dp"
@@ -182,6 +187,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="8"
+            android:textSize="24dp"
             android:id="@+id/number8Button"/>
         <Button
             android:layout_width="0dp"
@@ -189,6 +195,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="9"
+            android:textSize="24dp"
             android:id="@+id/number9Button"/>
         <Button
             android:layout_width="0dp"
@@ -196,6 +203,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="×"
+            android:textSize="24dp"
             android:id="@+id/multiplyButton"/>
 
         <Button
@@ -204,6 +212,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="4"
+            android:textSize="24dp"
             android:id="@+id/number4Button"/>
         <Button
             android:layout_width="0dp"
@@ -211,6 +220,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="5"
+            android:textSize="24dp"
             android:id="@+id/number5Button"/>
         <Button
             android:layout_width="0dp"
@@ -218,6 +228,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="6"
+            android:textSize="24dp"
             android:id="@+id/number6Button"/>
         <Button
             android:layout_width="0dp"
@@ -225,6 +236,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="−"
+            android:textSize="24dp"
             android:id="@+id/subtractButton"/>
 
         <Button
@@ -233,6 +245,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="1"
+            android:textSize="24dp"
             android:id="@+id/number1Button"/>
         <Button
             android:layout_width="0dp"
@@ -240,6 +253,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="2"
+            android:textSize="24dp"
             android:id="@+id/number2Button"/>
         <Button
             android:layout_width="0dp"
@@ -247,6 +261,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="3"
+            android:textSize="24dp"
             android:id="@+id/number3Button"/>
         <Button
             android:layout_width="0dp"
@@ -254,6 +269,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="+"
+            android:textSize="24dp"
             android:id="@+id/addButton"/>
 
         <Button
@@ -263,6 +279,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="0"
+            android:textSize="24dp"
             android:id="@+id/number0Button"/>
         <Button
             android:layout_width="0dp"
@@ -270,6 +287,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="."
+            android:textSize="24dp"
             android:id="@+id/decimalPointButton"/>
         <Button
             android:layout_width="0dp"
@@ -277,6 +295,7 @@
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:text="="
+            android:textSize="24dp"
             android:id="@+id/equalButton"/>
 
     </GridLayout>
